@@ -48,7 +48,9 @@ body {
     width: min(1240px, 100% - (var(--ss-padding) * 2));
     margin-inline: auto;
 }
-header,footer {
+
+header,
+footer {
     margin-inline: -2rem;
 }
 
@@ -68,6 +70,7 @@ input::placeholder {
     grid-template-rows: auto 1fr auto;
     gap: 4rem 2rem;
 }
+
 /* header */
 .primary-header {
     grid-column: 1 / -1;
@@ -105,10 +108,12 @@ input::placeholder {
     display: grid;
     grid-template-columns: subgrid;
 }
+
 .primary-content section {
     grid-column: 1 / -1;
     justify-self: center;
 }
+
 .history {
     column-gap: 2rem;
     border: 1px solid rgba(0, 0, 0, .25);
@@ -117,38 +122,44 @@ input::placeholder {
     margin-block-end: 4rem;
     box-shadow: 0 .1rem .1rem rgba(0, 0, 0, .25);
 }
+
 .options {
     margin-block: 1rem;
 }
-.options > img {
+
+.options>img {
     width: 2.4rem;
     aspect-ratio: 1;
     object-fit: contain;
 }
 
-.options > img:not(:first-child) {
+.options>img:not(:first-child) {
     margin-inline-start: 1.8rem;
 }
 
-.history  img:not(:first-child) {
-    margin-inline-start: 2rem;    
+.history img:not(:first-child) {
+    margin-inline-start: 2rem;
 }
 
 .post {
     border: 1px solid rgba(0, 0, 0, .25);
     border-radius: 5px;
 }
+
 .post-header {
     padding: 1rem;
     border-bottom: 1px solid rgba(0, 0, 0, .25);
 }
+
 .post-header div:first-child h2 {
     padding: .9rem;
 }
+
 .post-content {
     padding: 2rem;
 }
-.post-content > p:not(:first-child) {
+
+.post-content>p:not(:first-child) {
     margin-top: 1rem;
 }
 
@@ -168,12 +179,15 @@ input::placeholder {
 .width-6 {
     max-width: 6rem;
 }
+
 .width-5 {
     max-width: 5rem;
 }
+
 .width-3 {
     max-width: 3rem;
 }
+
 .width-2 {
     max-width: 2.4rem;
 }
@@ -198,27 +212,31 @@ input::placeholder {
 
     /* main */
     .primary-content section {
-        grid-column: 2 / span 6; 
+        grid-column: 2 / span 6;
         justify-self: start;
     }
-    
+
     .post-content {
         padding-inline: 5rem;
     }
 
     /* aside */
     .primary-content aside {
-        grid-column: span 3 / -2; 
+        grid-column: span 3 / -2;
     }
+
     .first-suggestion {
         padding-block-end: 3.6rem;
     }
+
     .user-inf {
         margin-inline-start: 1.3rem;
     }
-    .suggestions > * {
+
+    .suggestions>* {
         margin-block-end: 1rem;
     }
+
     .suggestions h3 {
         margin-inline-start: 4px;
     }
@@ -339,9 +357,11 @@ input::placeholder {
     display: flex;
     align-items: center;
 }
+
 .jc-sb {
     justify-content: space-between;
 }
+
 .jc-sa {
     justify-content: space-evenly;
 }
