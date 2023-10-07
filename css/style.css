@@ -1,0 +1,347 @@
+/* link to font family from google */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Roboto&display=swap');
+
+/* variables */
+:root {
+    --clr-accent: #1ca0f6;
+    --clr-neutral-100: #FAFAFA;
+    --clr-neutral-400: #808080;
+    --clr-neutral-500: #A49B9B;
+    --clr-neutral-700: #222222;
+    --clr-neutral-800: #262626;
+    --clr-neutral-900: #000000;
+
+    --ff-secondary: Roboto, san-serif;
+    --ff-body: Inter, san-serif;
+
+    --fw-bold: 700;
+    --fw-semi-bold: 500;
+    --fw-regular: 400;
+
+    --fs-400: 1rem;
+    --fs-500: 1.2rem;
+    --fs-600: 1.4rem;
+    --fs-700: 1.5rem;
+    --fs-900: 2.5rem;
+
+    --ss-padding: 1rem;
+
+}
+
+/* restes */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    object-fit: cover;
+}
+
+html,
+body {
+    font-family: var(--ff-body);
+    font-size: 10px;
+    font-weight: var(--fw-regular);
+    width: min(1240px, 100% - (var(--ss-padding) * 2));
+    margin-inline: auto;
+}
+header,footer {
+    margin-inline: -2rem;
+}
+
+form,
+input,
+input::placeholder {
+    font: inherit;
+    color: inherit;
+}
+
+
+/* generla styles */
+.grid-container {
+    display: grid;
+    min-height: 100%;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: auto 1fr auto;
+    gap: 4rem 2rem;
+}
+/* header */
+.primary-header {
+    grid-column: 1 / -1;
+
+    display: grid;
+    grid-template-columns: subgrid;
+    align-items: center;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .25);
+    padding-block: 1.3rem;
+}
+
+.logo {
+    grid-column-start: 1;
+}
+
+.form input {
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, .25);
+    border-radius: 5px;
+    padding-block: 1.2rem;
+    padding-inline-start: 1.2rem;
+}
+
+.user-img {
+    grid-column-start: -1;
+    height: 100%;
+    object-fit: fill;
+}
+
+/* main*/
+.primary-content {
+    grid-row: 2;
+    grid-column: 1 / -1;
+
+    display: grid;
+    grid-template-columns: subgrid;
+}
+.primary-content section {
+    grid-column: 1 / -1;
+    justify-self: center;
+}
+.history {
+    column-gap: 2rem;
+    border: 1px solid rgba(0, 0, 0, .25);
+    padding: 3rem 2rem;
+    border-radius: 5px;
+    margin-block-end: 4rem;
+    box-shadow: 0 .1rem .1rem rgba(0, 0, 0, .25);
+}
+.options {
+    margin-block: 1rem;
+}
+.options > img {
+    width: 2.4rem;
+    aspect-ratio: 1;
+    object-fit: contain;
+}
+
+.options > img:not(:first-child) {
+    margin-inline-start: 1.8rem;
+}
+
+.history  img:not(:first-child) {
+    margin-inline-start: 2rem;    
+}
+
+.post {
+    border: 1px solid rgba(0, 0, 0, .25);
+    border-radius: 5px;
+}
+.post-header {
+    padding: 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, .25);
+}
+.post-header div:first-child h2 {
+    padding: .9rem;
+}
+.post-content {
+    padding: 2rem;
+}
+.post-content > p:not(:first-child) {
+    margin-top: 1rem;
+}
+
+/* footer */
+.primary-footer {
+    grid-column: 1 / -1;
+    grid-row: -1;
+    text-align: center;
+    padding-block: .8rem;
+}
+
+/* functional clasess */
+.ss-vh {
+    display: none;
+}
+
+.width-6 {
+    max-width: 6rem;
+}
+.width-5 {
+    max-width: 5rem;
+}
+.width-3 {
+    max-width: 3rem;
+}
+.width-2 {
+    max-width: 2.4rem;
+}
+
+
+/* media queries */
+
+@media (min-width: 850px) {
+    .grid-container {
+        grid-template-columns: repeat(12, 1fr);
+    }
+
+    .logo {
+        grid-column-start: 2;
+    }
+
+    .form {
+        /* display: visible; */
+        grid-column: 5 / span 4;
+
+    }
+
+    /* main */
+    .primary-content section {
+        grid-column: 2 / span 6; 
+        justify-self: start;
+    }
+    
+    .post-content {
+        padding-inline: 5rem;
+    }
+
+    /* aside */
+    .primary-content aside {
+        grid-column: span 3 / -2; 
+    }
+    .first-suggestion {
+        padding-block-end: 3.6rem;
+    }
+    .user-inf {
+        margin-inline-start: 1.3rem;
+    }
+    .suggestions > * {
+        margin-block-end: 1rem;
+    }
+    .suggestions h3 {
+        margin-inline-start: 4px;
+    }
+
+
+    /* large screen utility classes */
+    .ss-vh {
+        display: inline-block;
+    }
+}
+
+/* utility classes */
+.clr-accent {
+    color: var(--clr-accent);
+}
+
+.clr-neutral-100 {
+    color: var(--clr-neutral-100);
+}
+
+.clr-neutral-400 {
+    color: var(--clr-neutral-400);
+}
+
+.clr-neutral-500 {
+    color: var(--clr-neutral-500);
+}
+
+.clr-neutral-700 {
+    color: var(--clr-neutral-700);
+}
+
+.clr-neutral-800 {
+    color: var(--clr-neutral-800);
+}
+
+.clr-neutral-900 {
+    color: var(--clr-neutral-900);
+}
+
+.bg-accent {
+    background-color: var(--clr-accent);
+}
+
+.bg-neutral-100 {
+    background-color: var(--clr-neutral-100);
+}
+
+.bg-neutral-400 {
+    background-color: var(--clr-neutral-400);
+}
+
+.bg-neutral-700 {
+    background-color: var(--clr-neutral-700);
+}
+
+.bg-neutral-900 {
+    background-color: var(--clr-neutral-900);
+}
+
+.ff-secondary {
+    font-family: var(--ff-secondary);
+}
+
+.fw-bold {
+    font-weight: var(--fw-bold);
+}
+
+.fw-semi-bold {
+    font-weight: var(--fw-semi-bold);
+}
+
+.fw-regular {
+    font-weight: var(--fw-regular);
+}
+
+.fs-400 {
+    font-size: var(--fs-400);
+}
+
+.fs-500 {
+    font-size: var(--fs-500);
+}
+
+.fs-600 {
+    font-size: var(--fs-600);
+}
+
+.fs-700 {
+    font-size: var(--fs-700);
+}
+
+.fs-900 {
+    font-size: var(--fs-900);
+}
+
+.br-50 {
+    border-radius: 50%;
+}
+
+.br-50>img {
+    border-radius: 50%;
+}
+
+.txt-capitalize {
+    text-transform: capitalize;
+}
+
+.txt-uppercase {
+    text-transform: uppercase;
+}
+
+.lttr-spacing-4 {
+    letter-spacing: .4em;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+.jc-sb {
+    justify-content: space-between;
+}
+.jc-sa {
+    justify-content: space-evenly;
+}
